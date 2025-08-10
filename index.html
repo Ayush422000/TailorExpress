@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailorExpress - Book Tailors at Your Doorstep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-scissors"></i>
+                <span>TailorExpress</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tailors" class="nav-link">Tailors</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tracking" class="nav-link">Track Order</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Book a Tailor at Your Doorstep</h1>
+                <p class="hero-subtitle">Professional tailors come to your home for measurements and fabric pickup. Quality stitching delivered to your doorstep.</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" id="locationInput">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" id="findTailorsBtn">
+                        <i class="fas fa-search"></i>
+                        Find Tailors Near You
+                    </button>
+                    <button class="btn btn-secondary btn-large" id="bookNowBtn">
+                        <i class="fas fa-calendar"></i>
+                        Book Now
+                    </button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Expert Tailors</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.8★</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Professional Tailor" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Tailors Section -->
+    <section class="tailors-section" id="tailors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Top 10 Tailors Near You</h2>
+                <p class="section-subtitle">Professional tailors with excellent ratings and reviews</p>
+            </div>
+            
+            <div class="tailors-grid" id="tailorsGrid">
+                <!-- Tailor cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive tailoring services for all your needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-male"></i>
+                    </div>
+                    <h3>Men's Suits</h3>
+                    <p>Professional suits, blazers, and formal wear</p>
+                    <span class="service-price">Starting at ₹2000</span>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Women's Dresses</h3>
+                    <p>Elegant dresses, sarees, and ethnic wear</p>
+                    <span class="service-price">Starting at ₹1500</span>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Casual Wear</h3>
+                    <p>Shirts, pants, and casual clothing</p>
+                    <span class="service-price">Starting at ₹500</span>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Alterations</h3>
+                    <p>Perfect fit adjustments and modifications</p>
+                    <span class="service-price">Starting at ₹200</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book a Tailor Visit</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerAddress">Delivery Address</label>
+                    <textarea id="customerAddress" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="visitDate">Preferred Date</label>
+                        <input type="date" id="visitDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="visitTime">Preferred Time</label>
+                        <select id="visitTime" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clothingType">Type of Clothing</label>
+                    <select id="clothingType" required>
+                        <option value="">Select Clothing Type</option>
+                        <option value="suit">Men's Suit</option>
+                        <option value="shirt">Shirt</option>
+                        <option value="pants">Pants</option>
+                        <option value="dress">Women's Dress</option>
+                        <option value="saree">Saree</option>
+                        <option value="alteration">Alteration</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Fabric Pickup</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="fabricPickup" value="yes" required>
+                            <span class="radio-custom"></span>
+                            Yes, I need fabric pickup
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="fabricPickup" value="no" required>
+                            <span class="radio-custom"></span>
+                            No, I have my own fabric
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBooking">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Book Visit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Tracking Modal -->
+    <div class="modal" id="trackingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Track Your Order</h3>
+                <button class="modal-close" id="closeTrackingModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tracking-form">
+                <div class="form-group">
+                    <label for="orderId">Order ID</label>
+                    <input type="text" id="orderId" placeholder="Enter your order ID">
+                </div>
+                <div class="form-group">
+                    <label for="orderPhone">Phone Number</label>
+                    <input type="tel" id="orderPhone" placeholder="Enter your phone number">
+                </div>
+                <button class="btn btn-primary" id="trackOrderBtn">Track Order</button>
+            </div>
+            
+            <div class="tracking-result" id="trackingResult" style="display: none;">
+                <div class="order-status">
+                    <h4>Order Status</h4>
+                    <div class="status-timeline">
+                        <div class="status-step completed">
+                            <div class="status-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="status-content">
+                                <h5>Order Confirmed</h5>
+                                <p>Your order has been confirmed</p>
+                                <span class="status-time">Today, 10:30 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="status-step completed">
+                            <div class="status-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="status-content">
+                                <h5>Measurement Taken</h5>
+                                <p>Tailor has taken your measurements</p>
+                                <span class="status-time">Today, 2:15 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="status-step active">
+                            <div class="status-icon">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="status-content">
+                                <h5>Stitching in Progress</h5>
+                                <p>Your garment is being stitched</p>
+                                <span class="status-time">In Progress</span>
+                            </div>
+                        </div>
+                        
+                        <div class="status-step">
+                            <div class="status-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="status-content">
+                                <h5>Ready for Delivery</h5>
+                                <p>Your order will be delivered</p>
+                                <span class="status-time">Estimated: Tomorrow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tailor Details Modal -->
+    <div class="modal" id="tailorDetailsModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="tailorDetailName">Tailor Details</h3>
+                <button class="modal-close" id="closeTailorModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tailor-details-content" id="tailorDetailsContent">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-scissors"></i>
+                        <span>TailorExpress</span>
+                    </div>
+                    <p>Professional tailors at your doorstep. Quality stitching, timely delivery.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Men's Suits</a></li>
+                        <li><a href="#">Women's Dresses</a></li>
+                        <li><a href="#">Casual Wear</a></li>
+                        <li><a href="#">Alterations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 TailorExpress. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
