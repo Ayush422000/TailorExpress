@@ -1,4 +1,4 @@
-TailorExpress - Tailor Delivery App
+TailorExpress - 
 A modern, responsive website for booking tailors at your doorstep. Built with HTML, CSS, and JavaScript, this app provides a seamless experience for users to find, book, and track tailor services.
 
 * * TailorExpress – Tailor Delivery Web Application (Personal Project)
